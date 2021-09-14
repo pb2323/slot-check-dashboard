@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Form, Button, Message, Segment, Divider } from "semantic-ui-react";
-
 import {
   HeaderMessage,
   FooterMessage,
