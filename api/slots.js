@@ -76,7 +76,6 @@ router.post("/list", authMiddleware, async (req, res) => {
           subjects.includes(slot.subject) &&
           selectedSlots.includes(slot.slot)
       );
-      console.log(user.slots, "user Slo");
       const temp = user.slots.map((slot) => {
         return {
           name: user.user.name,

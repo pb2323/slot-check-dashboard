@@ -50,7 +50,7 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: "teacher", numeric: false, label: "Teachers" },
+  { id: "name", numeric: false, label: "Teacher" },
   { id: "subject", numeric: false, label: "Subjects" },
   { id: "day", numeric: false, label: "Day" },
   { id: "slot", numeric: false, label: "Slot (24-hours)" },
@@ -214,17 +214,22 @@ export default function EnhancedTable({ user, slots, errorLoading = false }) {
   ];
   const handleSubmit = async () => {
     setLoading(true);
-    const { data } = await axios.post(
-      `${baseUrl}/api/slots/list`,
-      {
-        subjects: selectedCourses,
-        days: selectedDays,
-        selectedSlots: selectedTimeSlots,
-      },
-      { headers: { Authorization: Cookies.get("token") } }
-    );
-    setRows(data.slots);
-    setLoading(false);
+    try {
+      const { data } = await axios.post(
+        `${baseUrl}/api/slots/list`,
+        {
+          subjects: selectedCourses,
+          days: selectedDays,
+          selectedSlots: selectedTimeSlots,
+        },
+        { headers: { Authorization: Cookies.get("token") } }
+      );
+      setRows(data.slots);
+      setLoading(false);
+    } catch (err) {
+      console.error(err);
+      setLoading(false);
+    }
   };
 
   return (
