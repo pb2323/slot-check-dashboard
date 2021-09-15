@@ -82,6 +82,8 @@ function ModalExampleMultiple({
           <Button
             disabled={subject === ""}
             onClick={() => {
+              setDay("");
+              setSlots([]);
               setSecondOpen(true);
             }}
             primary
@@ -103,7 +105,10 @@ function ModalExampleMultiple({
               selection
               value={day}
               style={{ height: "53px" }}
-              onChange={(e, data) => setDay(data.value)}
+              onChange={(e, data) => {
+                setDay(data.value);
+                setSlots([]);
+              }}
               options={[
                 { key: "Sunday", text: "Sunday", value: "Sunday" },
                 { key: "Monday", text: "Monday", value: "Monday" },
