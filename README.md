@@ -1,4 +1,4 @@
-# Slot Check Dash
+# Slot Check Dashboard
 https://slot-check-dashboard.herokuapp.com
 
 # What is this?
