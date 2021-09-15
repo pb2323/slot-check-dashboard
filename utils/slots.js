@@ -14,17 +14,7 @@ export const createSlots = async (slots) => {
     return data;
   } catch (err) {
     console.error(err);
-  }
-};
-
-export const getSlots = async () => {
-  try {
-    const { data } = await axios.get(`${baseUrl}/api/slots`, {
-      headers: { Authorization: cookie.get("token") },
-    });
-    return slots;
-  } catch (err) {
-    console.error(err);
+    return { slots: [] };
   }
 };
 
