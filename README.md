@@ -1,7 +1,7 @@
-# Slot Check Dash
+# Slot Check Dashboard
 https://slot-check-dashboard.herokuapp.com
 
-# What is this
+# What is this?
 A portal for teachers and students where teacher can post about their availability for different subjects and students can view them.
 
 # Teachers View
